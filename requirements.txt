@@ -8,4 +8,5 @@ groq
 gtts
 reportlab
 python-docx
+python-dotenv
 python-pptx
