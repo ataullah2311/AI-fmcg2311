@@ -108,8 +108,9 @@ if not st.session_state.logged_in:
 # LOAD GROQ
 # ==============================
 
-load_dotenv()
-client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+#load_dotenv()
+#client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+groq_api_key = st.secrets["GROQ_API_KEY"]
 
 # ==============================
 # TITLE
@@ -317,4 +318,5 @@ if st.button("🔍 Find Most Profitable Strategy"):
     st.success("🏆 Optimal Strategy Identified")
     st.write("Recommended Price Change:", best_price, "%")
     st.write("Recommended Marketing Increase:", best_marketing, "%")
+
     st.write("Expected Maximum Profit:", round(best_profit,2))
