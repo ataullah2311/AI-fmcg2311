@@ -7,6 +7,13 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.lib.units import inch
 
+
+
+# Initialize the Groq client
+client = Groq(
+    api_key=st.secrets["GROQ_API_KEY"],
+)
+
 # ==============================
 # PAGE CONFIG
 # ==============================
@@ -320,3 +327,4 @@ if st.button("🔍 Find Most Profitable Strategy"):
     st.write("Recommended Marketing Increase:", best_marketing, "%")
 
     st.write("Expected Maximum Profit:", round(best_profit,2))
+
